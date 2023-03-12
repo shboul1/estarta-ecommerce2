@@ -50,3 +50,17 @@ export const Logout = () => async (dispatch) => {
     return false;
   }
 };
+
+export const validateToken = () => async (dispatch) => {
+  dispatch({
+    type: AUTH_CONSTANSTS.AUTH_LOADING,
+  });
+
+  try {
+    await magic.user.getIdToken();
+  } catch (error) {
+    localStorage.clear();
+    dispatch({ type: AUTH_CONSTANSTS.CLEAR });
+    return false;
+  }
+};
