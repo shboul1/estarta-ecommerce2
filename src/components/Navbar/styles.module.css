@@ -2,14 +2,29 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
     width: 100%;
     border-bottom: 2px solid #eee;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 .loginBtn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap:5px
+}
+.logoutIcon {
+    position: relative;
+    cursor: pointer;
+}
+.logoutBox {
+    position: absolute;
+    right: -4px;
+    background: #4f4b4b;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 13px;
+}
+.logoutText:hover {
+text-decoration: underline;
 }
