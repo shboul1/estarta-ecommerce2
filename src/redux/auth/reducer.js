@@ -29,6 +29,14 @@ function authReducer(state = initState, action) {
         user: action.payload.userMetaData,
         token: action.payload.Token,
       };
+    case AUTH_CONSTANSTS.CLEAR:
+      return {
+        token: "",
+        isAuth: false,
+        user: {},
+        loading: false,
+        error: null,
+      };
     default:
       return state;
   }
