@@ -8,15 +8,13 @@ import { Logout } from "../../redux/auth/actions";
 // Icons
 import { BsArrowRightShort } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
-// Components
-import Spinner from "../Spinner";
 // Styles
 import styles from "./styles.module.css";
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const nav = useNavigate();
-  const { isAuth, user, loading } = useSelector((state) => state.authReducer);
+  const { isAuth, user } = useSelector((state) => state.authReducer);
   const [isLogoutBoxOpened, setIsLogoutBoxOpened] = useState(false);
   function handleLogout() {
     dispatch(Logout()).then((res) => {
@@ -25,8 +23,6 @@ export default function Navbar() {
       }
     });
   }
-
-  if (loading) return <Spinner />;
 
   return (
     <nav>
