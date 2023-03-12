@@ -37,6 +37,11 @@ function authReducer(state = initState, action) {
         loading: false,
         error: null,
       };
+    case AUTH_CONSTANSTS.RESET_LOADING:
+      return {
+        ...state,
+        loading: false,
+      };
     default:
       return state;
   }
