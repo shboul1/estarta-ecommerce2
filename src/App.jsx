@@ -32,17 +32,16 @@ function ProtecedRoute({ element }) {
 }
 
 function App() {
-  const localStorageToken = Boolean(localStorage.getItem("token"));
   const dispatch = useDispatch();
   const { loading, isAuth } = useSelector((state) => state.authReducer);
   const nav = useNavigate();
 
   useEffect(() => {
-    if (isAuth && localStorageToken)
+    if (isAuth)
       dispatch(validateToken()).then((res) => {
         if (!res) nav("/login");
       });
-  }, [localStorageToken]);
+  }, [isAuth]);
 
   if (loading) return <Spinner />;
 

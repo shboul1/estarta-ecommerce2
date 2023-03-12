@@ -57,7 +57,10 @@ export const validateToken = () => async (dispatch) => {
   });
 
   try {
-    await magic.user.getIdToken();
+    const res = await magic.user.getIdToken();
+    if (res) {
+      dispatch({ type: AUTH_CONSTANSTS.RESET_LOADING });
+    }
   } catch (error) {
     localStorage.clear();
     dispatch({ type: AUTH_CONSTANSTS.CLEAR });
