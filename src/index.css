@@ -67,3 +67,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+<<<<<<< Updated upstream
+=======
+#root {
+  width: 100%;
+}
+a {
+  color: initial;
+  text-decoration: none;
+}
+a.active {
+  border-bottom: 1px solid #646cff;
+}
+>>>>>>> Stashed changes
