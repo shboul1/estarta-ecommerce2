@@ -51,10 +51,15 @@ button:focus-visible {
   width: 80%;
   margin: 0 auto;
 }
+
 #root {
   width: 100%;
 }
 a {
   color: initial;
   text-decoration: none;
+
+}
+a.active {
+  border-bottom: 1px solid #646cff;
 }

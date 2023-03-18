@@ -28,3 +28,13 @@ nav {
 .logoutText:hover {
 text-decoration: underline;
 }
+.navLinksContainer {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.displayFlex {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+}

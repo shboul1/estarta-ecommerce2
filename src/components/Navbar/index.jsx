@@ -1,12 +1,12 @@
 // React
 import { useState } from "react";
 // React Router Dom
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../redux/auth/actions";
 // Icons
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort, BsCart4 } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
 // Styles
 import styles from "./styles.module.css";
@@ -40,7 +40,14 @@ export default function Navbar() {
       )}
 
       {isAuth && (
-        <div>
+        <div className={styles.navLinksContainer}>
+          <div className={styles.displayFlex}>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/products">Products</NavLink>
+            <Link to="/cart">
+              <BsCart4 size={25} />
+            </Link>
+          </div>
           <div className={styles.logoutIcon}>
             <BiUserCircle
               onClick={() => setIsLogoutBoxOpened(!isLogoutBoxOpened)}

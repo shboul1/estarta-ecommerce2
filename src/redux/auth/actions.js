@@ -61,6 +61,7 @@ export const validateToken = () => async (dispatch) => {
     if (res) {
       dispatch({ type: AUTH_CONSTANSTS.RESET_LOADING });
     }
+    return true;
   } catch (error) {
     localStorage.clear();
     dispatch({ type: AUTH_CONSTANSTS.CLEAR });
