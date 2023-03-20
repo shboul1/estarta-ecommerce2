@@ -15,6 +15,8 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const nav = useNavigate();
   const { isAuth, user } = useSelector((state) => state.authReducer);
+  const { cartItems } = useSelector((state) => state.cartReducer);
+
   const [isLogoutBoxOpened, setIsLogoutBoxOpened] = useState(false);
   function handleLogout() {
     dispatch(Logout()).then((res) => {
@@ -44,8 +46,9 @@ export default function Navbar() {
           <div className={styles.displayFlex}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/products">Products</NavLink>
-            <Link to="/cart">
+            <Link to="/cart" className={styles.cartIcon}>
               <BsCart4 size={25} />
+              <div className={styles.cartItemsCount}>{cartItems?.length}</div>
             </Link>
           </div>
           <div className={styles.logoutIcon}>

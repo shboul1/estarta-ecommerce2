@@ -1,0 +1,45 @@
+.cartItemsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem 0;
+    width: 50%;
+    text-align: center;
+}
+.cartItem {
+    border: 2px solid #eee;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 24px;
+    display: flex;
+    align-items: start;
+    column-gap: 1rem;
+
+}
+.cartItemsDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 24px;
+}
+.quantityInput {
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    width: 70px;
+    text-align: center;
+    outline: none;
+    height: 20px;
+}
+.quantityContainer {
+    display: flex;
+    align-items: center;
+}
+.quantityContainer button {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+
+}

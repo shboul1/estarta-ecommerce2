@@ -1,5 +1,9 @@
 import * as CART_CONSTANTS from "./constants";
 
-const addToCart = () => (dispatch) => {};
+export const addToCart = (product) => (dispatch) => {
+  dispatch({ type: CART_CONSTANTS.ADD_TO_CART, payload: product });
+};
 
-const removeFromCart = () => (dispatch) => {};
+export const removeFromCart = (product) => (dispatch) => {
+  dispatch({ type: CART_CONSTANTS.REMOVE_FROM_CART, payload: product });
+};

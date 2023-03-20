@@ -3,19 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/prodcuts/action";
 import styles from "./styles.module.css";
 import ProductCard from "../../components/ProductCard";
-
+import { MoonLoader } from "react-spinners";
 export default function Products() {
   const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.productsReducer);
+  const { loading, products } = useSelector((state) => state.productsReducer);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    if (!products.length) dispatch(fetchProducts());
   }, []);
 
+  if (loading) return <MoonLoader size={30} color={"#eee"} />;
   return (
     <div className={styles.productsContainer}>
       {products?.map((product) => (
-        <ProductCard product={product} />
+        <ProductCard key={product?.id} product={product} />
       ))}
     </div>
   );
